@@ -83,3 +83,9 @@ input {
     font-size: 15px;
     color: black;
 }
+
+#github-link {
+    display: block;
+    text-decoration: none;
+    margin: 0 auto;
+}
