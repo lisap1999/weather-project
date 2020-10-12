@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <title>weather</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+
+    <script src="https://kit.fontawesome.com/6cc61ff5b7.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <form id="search-form">
+            <i class="fas fa-globe-americas"></i>
+            <input type="text" placeholder="Location" autofocus="off" id="locationSearch" />
+            <input type="submit" value="Search" class="btn btn-info btn-sm" />
+            <button type="button" class="btn btn-info btn-sm" id="search-button" data-toggle="button" aria-pressed="false">
+            <a href="#" id="cel-link"> C </a> / <a href="#" id="fer-link">F</a>
+        </button>
+            <button type="button" class="btn btn-info btn-sm" id="geo-location" data-toggle="button" aria-pressed="false">
+            <i class="fas fa-map-marker-alt"></i>
+        </button>
+        </form>
+        <hr />
+        <br />
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card" style="width: 16rem;">
+                    <div class="card-body">
+                        <h5 class="card-title" id="place">Today</h5>
+                        <p id="today-card">
+                            Thu
+                            <br /> 16:00
+                        </p>
+                        <hr />
+                        <span class="temp" id="today-temp">
+                            18℃
+                            </span>
+                        <br /> <span class="description" id="current-des">
+cloudy
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card" style="width: 16rem;" id="left-card">
+                    <div class="card-body">
+                        <i class="fas fa-cloud"></i>
+                        <p id="second-data">
+                            <hr /> Humidity:45%
+                            <br /> percip: 0%
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row" id="first-row">
+            <div class="col-sm-3">
+                <div class="card" style="width: 10rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Sun</h5>
+                        <i class="fas fa-cloud"></i>
+                        <br />
+                        <br />
+                        <p class="card-text">18<sup>℃ </sup> / 20<sup>℃ </sup></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 10rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Mon</h5>
+                        <i class="fas fa-cloud-sun"></i>
+                        <br />
+                        <br />
+                        <p class="card-text">20<sup>℃ </sup> / 25<sup>℃ </sup></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 10rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Tue</h5>
+                        <i class="fas fa-sun"></i>
+                        <br />
+                        <br />
+                        <p class="card-text">20<sup>℃ </sup> / 27<sup>℃ </sup></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 10rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Wed</h5>
+                        <i class="fas fa-cloud"></i>
+                        <br />
+                        <br />
+                        <p class="card-text">18<sup>℃ </sup> / 25<sup>℃ </sup></p>
+                    </div>
+                </div>
+
+            </div>
+            <br />
+        </div>
+    </div>
+    <script src="src/app.js"></script>
+</body>
+
+</html>
