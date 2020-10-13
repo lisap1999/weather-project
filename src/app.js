@@ -13,12 +13,14 @@ function forecast(response) {
 
     let thirdTemp = document.querySelector("#third-temp");
     thirdTemp.innerHTML = `${Math.round(response.data.list[2].main.temp_min)}° / ${Math.round(response.data.list[2].main.temp_max)}°`;
+
     let thirdIcon = document.querySelector("#third-icon");
     let iconUrlT = (`https://openweathermap.org/img/wn/${response.data.list[2].weather[0].icon}@2x.png`);
     thirdIcon.setAttribute("src", iconUrlT);
 
     let forthTemp = document.querySelector("#forth-temp");
     forthTemp.innerHTML = `${Math.round(response.data.list[3].main.temp_min)}° / ${Math.round(response.data.list[3].main.temp_max)}°`;
+
     let forthIcon = document.querySelector("#forth-icon");
     let iconUrlR = (`https://openweathermap.org/img/wn/${response.data.list[3].weather[0].icon}@2x.png`);
     forthIcon.setAttribute("src", iconUrlR);
@@ -69,15 +71,15 @@ function geoLocation(event) {
 
 let celTemp = null;
 
+
+
 function convert(event) {
+
     let fer = document.querySelector("#today-temp");
     fer.innerHTML = `${Math.round(celTemp * 9 / 5 + 32)}℉`;
 
-
-
-
-
 }
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", place);
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -95,5 +97,5 @@ forth.innerHTML = days[now.getDay() + 4];
 let geo = document.querySelector("#geo-location");
 geo.addEventListener("click", geoLocation);
 
-let convertButton = document.querySelector("#convert");
-convertButton.addEventListener("click", convert);
+let ferButton = document.querySelector("#fer");
+ferButton.addEventListener("click", convert);
