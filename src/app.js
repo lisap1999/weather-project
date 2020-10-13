@@ -1,16 +1,32 @@
 function forecast(response) {
+    console.log(response);
     let firstTemp = document.querySelector("#first-temp");
     firstTemp.innerHTML = `${Math.round(response.data.list[0].main.temp_min)} / ${Math.round(response.data.list[0].main.temp_max)}℃`;
+    let firstIcon = document.querySelector("#first-icon");
+    let iconUrlF = (`https://openweathermap.org/img/wn/${response.data.list[0].weather[0].icon}@2x.png`);
+    firstIcon.setAttribute("src", iconUrlF);
+
     let secondTemp = document.querySelector("#second-temp");
     secondTemp.innerHTML = `${Math.round(response.data.list[1].main.temp_min)} / ${Math.round(response.data.list[1].main.temp_max)}℃`;
+    let secondIcon = document.querySelector("#second-icon");
+    let iconUrlS = (`https://openweathermap.org/img/wn/${response.data.list[1].weather[0].icon}@2x.png`);
+    secondIcon.setAttribute("src", iconUrlS);
+
     let thirdTemp = document.querySelector("#third-temp");
     thirdTemp.innerHTML = `${Math.round(response.data.list[2].main.temp_min)} / ${Math.round(response.data.list[2].main.temp_max)}℃`;
+    let thirdIcon = document.querySelector("#third-icon");
+    let iconUrlT = (`https://openweathermap.org/img/wn/${response.data.list[2].weather[0].icon}@2x.png`);
+    thirdIcon.setAttribute("src", iconUrlT);
+
     let forthTemp = document.querySelector("#forth-temp");
     forthTemp.innerHTML = `${Math.round(response.data.list[3].main.temp_min)} / ${Math.round(response.data.list[3].main.temp_max)}℃`;
+    let forthIcon = document.querySelector("#forth-icon");
+    let iconUrlR = (`https://openweathermap.org/img/wn/${response.data.list[3].weather[0].icon}@2x.png`);
+    forthIcon.setAttribute("src", iconUrlR);
 }
 
 function getCurrent(response) {
-    // console.log(response);
+
     let currentTemp = document.querySelector("#today-temp");
     currentTemp.innerHTML = `${Math.round(response.data.main.temp)}℃`;
     let description = document.querySelector("#current-des");
@@ -23,7 +39,6 @@ function getCurrent(response) {
     let todayIcon = document.querySelector("img");
     let iconUrl = (`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     todayIcon.setAttribute("src", iconUrl);
-
     let apiKey = "e2a35def79247fa91a2b82c7838e47a9";
     let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${response.data.name}&units=metric&appid=${apiKey}`;
     axios.get(forecastUrl).then(forecast);
