@@ -67,7 +67,14 @@ function geoLocation(event) {
 
 }
 
+function convert(event) {
 
+
+
+
+
+
+}
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", place);
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -84,3 +91,6 @@ let forth = document.querySelector("#forth-day");
 forth.innerHTML = days[now.getDay() + 4];
 let geo = document.querySelector("#geo-location");
 geo.addEventListener("click", geoLocation);
+
+let convertButton = document.querySelector("#convert");
+convertButton.addEventListener("click", convert);
