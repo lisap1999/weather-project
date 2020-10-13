@@ -1,4 +1,5 @@
 function getCurrent(response) {
+    console.log(response);
     let currentTemp = document.querySelector("#today-temp");
     currentTemp.innerHTML = `${Math.round(response.data.main.temp)}℃`;
     let description = document.querySelector("#current-des");
@@ -6,6 +7,9 @@ function getCurrent(response) {
     console.log(response);
     let heading = document.querySelector("#place");
     heading.innerHTML = response.data.name;
+    let humid = document.querySelector("#second-data");
+    humid.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+
 
 
 }
