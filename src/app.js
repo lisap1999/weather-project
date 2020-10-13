@@ -1,13 +1,12 @@
 function forecast(response) {
-    console.log(response);
     let firstTemp = document.querySelector("#first-temp");
-    firstTemp.innerHTML = `${Math.round(response.data.list[0].main.temp_min)}<sup>℃</sup>/${Math.round(response.data.list[0].main.temp_max)}<sup>℃</sup>`;
+    firstTemp.innerHTML = `${Math.round(response.data.list[0].main.temp_min)}/${Math.round(response.data.list[0].main.temp_max)}℃`;
     let secondTemp = document.querySelector("#second-temp");
-    secondTemp.innerHTML = `${Math.round(response.data.list[1].main.temp_min)}<sup>℃</sup>/${Math.round(response.data.list[1].main.temp_max)}<sup>℃</sup>`;
+    secondTemp.innerHTML = `${Math.round(response.data.list[1].main.temp_min)}/${Math.round(response.data.list[1].main.temp_max)}℃`;
     let thirdTemp = document.querySelector("#third-temp");
-    thirdTemp.innerHTML = `${Math.round(response.data.list[2].main.temp_min)}<sup>℃</sup>/${Math.round(response.data.list[2].main.temp_max)}<sup>℃</sup>`;
+    thirdTemp.innerHTML = `${Math.round(response.data.list[2].main.temp_min)}/${Math.round(response.data.list[2].main.temp_max)}℃`;
     let forthTemp = document.querySelector("#forth-temp");
-    forthTemp.innerHTML = `${Math.round(response.data.list[3].main.temp_min)}<sup>℃</sup>/${Math.round(response.data.list[3].main.temp_max)}<sup>℃</sup>`;
+    forthTemp.innerHTML = `${Math.round(response.data.list[3].main.temp_min)}/${Math.round(response.data.list[3].main.temp_max)}℃`;
 }
 
 function getCurrent(response) {
@@ -55,7 +54,7 @@ form.addEventListener("submit", place);
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let now = new Date();
 let today = document.querySelector("#today-card");
-today.innerHTML = `${days[now.getDay()]} <br /> ${now.getHours()}:${now.getMinutes()}`;
+today.innerHTML = `${days[now.getDay()]} ${now.getHours()}:${now.getMinutes()}`;
 let first = document.querySelector("#first-day");
 first.innerHTML = days[now.getDay() + 1];
 let second = document.querySelector("#second-day");
