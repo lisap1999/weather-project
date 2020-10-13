@@ -1,3 +1,15 @@
+function forecast(response) {
+    console.log(response);
+    let firstTemp = document.querySelector("#first-temp");
+    firstTemp.innerHTML = `${Math.round(response.data.list[0].main.temp_min)}<sup>℃</sup>/${Math.round(response.data.list[0].main.temp_max)}<sup>℃</sup>`;
+    let secondTemp = document.querySelector("#second-temp");
+    secondTemp.innerHTML = `${Math.round(response.data.list[1].main.temp_min)}<sup>℃</sup>/${Math.round(response.data.list[1].main.temp_max)}<sup>℃</sup>`;
+    let thirdTemp = document.querySelector("#third-temp");
+    thirdTemp.innerHTML = `${Math.round(response.data.list[2].main.temp_min)}<sup>℃</sup>/${Math.round(response.data.list[2].main.temp_max)}<sup>℃</sup>`;
+    let forthTemp = document.querySelector("#forth-temp");
+    forthTemp.innerHTML = `${Math.round(response.data.list[3].main.temp_min)}<sup>℃</sup>/${Math.round(response.data.list[3].main.temp_max)}<sup>℃</sup>`;
+}
+
 function getCurrent(response) {
     console.log(response);
     let currentTemp = document.querySelector("#today-temp");
@@ -9,6 +21,10 @@ function getCurrent(response) {
     heading.innerHTML = response.data.name;
     let humid = document.querySelector("#second-data");
     humid.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+    let apiKey = "e2a35def79247fa91a2b82c7838e47a9";
+    let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${response.data.name}&units=metric&appid=${apiKey}`;
+    axios.get(forecastUrl).then(forecast);
+
 }
 
 function place(event) {
