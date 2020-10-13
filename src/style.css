@@ -17,6 +17,10 @@ a#linkedin {
     text-decoration: none;
 }
 
+#place {
+    text-transform: uppercase;
+}
+
 form {
     position: relative;
     margin-top: 20px;
@@ -62,26 +66,14 @@ input {
     margin: 0 auto;
 }
 
-.fa-cloud {
+.fa-tree {
     color: teal;
     opacity: 0.6;
     font-size: 40px;
 }
 
-.fa-sun {
-    color: teal;
-    opacity: 0.6;
+#first-icon {
     font-size: 40px;
-}
-
-.fa-cloud-sun {
-    color: teal;
-    opacity: 0.6;
-    font-size: 40px;
-}
-
-.fa-globe-americas {
-    font-size: 15px;
     color: rgba(5, 105, 105, 0.795);
 }
 

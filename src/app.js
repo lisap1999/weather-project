@@ -1,12 +1,12 @@
 function forecast(response) {
     let firstTemp = document.querySelector("#first-temp");
-    firstTemp.innerHTML = `${Math.round(response.data.list[0].main.temp_min)}/${Math.round(response.data.list[0].main.temp_max)}℃`;
+    firstTemp.innerHTML = `${Math.round(response.data.list[0].main.temp_min)} / ${Math.round(response.data.list[0].main.temp_max)}℃`;
     let secondTemp = document.querySelector("#second-temp");
-    secondTemp.innerHTML = `${Math.round(response.data.list[1].main.temp_min)}/${Math.round(response.data.list[1].main.temp_max)}℃`;
+    secondTemp.innerHTML = `${Math.round(response.data.list[1].main.temp_min)} / ${Math.round(response.data.list[1].main.temp_max)}℃`;
     let thirdTemp = document.querySelector("#third-temp");
-    thirdTemp.innerHTML = `${Math.round(response.data.list[2].main.temp_min)}/${Math.round(response.data.list[2].main.temp_max)}℃`;
+    thirdTemp.innerHTML = `${Math.round(response.data.list[2].main.temp_min)} / ${Math.round(response.data.list[2].main.temp_max)}℃`;
     let forthTemp = document.querySelector("#forth-temp");
-    forthTemp.innerHTML = `${Math.round(response.data.list[3].main.temp_min)}/${Math.round(response.data.list[3].main.temp_max)}℃`;
+    forthTemp.innerHTML = `${Math.round(response.data.list[3].main.temp_min)} / ${Math.round(response.data.list[3].main.temp_max)}℃`;
 }
 
 function getCurrent(response) {
