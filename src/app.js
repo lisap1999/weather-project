@@ -9,9 +9,6 @@ function getCurrent(response) {
     heading.innerHTML = response.data.name;
     let humid = document.querySelector("#second-data");
     humid.innerHTML = `Humidity: ${response.data.main.humidity}%`;
-
-
-
 }
 
 function place(event) {
@@ -43,5 +40,13 @@ let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let now = new Date();
 let today = document.querySelector("#today-card");
 today.innerHTML = `${days[now.getDay()]} <br /> ${now.getHours()}:${now.getMinutes()}`;
+let first = document.querySelector("#first-day");
+first.innerHTML = days[now.getDay() + 1];
+let second = document.querySelector("#second-day");
+second.innerHTML = days[now.getDay() + 2];
+let third = document.querySelector("#third-day");
+third.innerHTML = days[now.getDay() + 3];
+let forth = document.querySelector("#forth-day");
+forth.innerHTML = days[now.getDay() + 4];
 let geo = document.querySelector("#geo-location");
 geo.addEventListener("click", geoLocation);
