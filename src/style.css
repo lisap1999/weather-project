@@ -12,9 +12,15 @@ body {
     margin: 7px auto;
 }
 
+#coded {
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
 a#linkedin {
     color: black;
     text-decoration: none;
+    margin-bottom: 5px;
 }
 
 #place {
@@ -100,6 +106,7 @@ img {
 
 p {
     font-size: 15px;
+    margin: 0 auto;
 }
 
 #next {
