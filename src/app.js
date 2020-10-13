@@ -10,7 +10,7 @@ function forecast(response) {
 }
 
 function getCurrent(response) {
-    console.log(response);
+    // console.log(response);
     let currentTemp = document.querySelector("#today-temp");
     currentTemp.innerHTML = `${Math.round(response.data.main.temp)}℃`;
     let description = document.querySelector("#current-des");
@@ -20,6 +20,10 @@ function getCurrent(response) {
     heading.innerHTML = response.data.name;
     let humid = document.querySelector("#second-data");
     humid.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+    let todayIcon = document.querySelector("img");
+    let iconUrl = (`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    todayIcon.setAttribute("src", iconUrl);
+
     let apiKey = "e2a35def79247fa91a2b82c7838e47a9";
     let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${response.data.name}&units=metric&appid=${apiKey}`;
     axios.get(forecastUrl).then(forecast);
