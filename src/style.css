@@ -93,3 +93,8 @@ input {
 p {
     font-size: 15px;
 }
+
+#next {
+    font-size: 20px;
+    margin: 0 auto 10px 20px;
+}
