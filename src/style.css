@@ -7,6 +7,10 @@
     margin: 0 auto;
 }
 
+a {
+    color: black;
+}
+
 form {
     position: relative;
     margin-top: 20px;
@@ -82,10 +86,4 @@ input {
 #search-button a {
     font-size: 15px;
     color: black;
-}
-
-#github-link {
-    display: block;
-    text-decoration: none;
-    margin: 0 auto;
 }
