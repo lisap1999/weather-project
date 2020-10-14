@@ -1,6 +1,7 @@
 let celTemp = null;
 let locationName = null;
 
+//shows forecast for the next 4 days
 
 function forecast(response) {
     let firstTemp = document.querySelector("#first-temp");
@@ -30,6 +31,8 @@ function forecast(response) {
     forthIcon.setAttribute("src", iconUrlR);
 }
 
+//shows the current temperature+changes the heading of today's main card
+
 function getCurrent(response) {
 
     let currentTemp = document.querySelector("#today-temp");
@@ -50,6 +53,8 @@ function getCurrent(response) {
     axios.get(forecastUrl).then(forecast);
 }
 
+//stores the location searched for 
+
 function place(event) {
     let search = document.querySelector("#locationSearch");
     event.preventDefault();
@@ -59,6 +64,7 @@ function place(event) {
     axios.get(apiUrl).then(getCurrent);
 
 }
+//gets the weather for geolocation
 
 function showPosition(location) {
     let apiKey = "e2a35def79247fa91a2b82c7838e47a9";
@@ -66,13 +72,15 @@ function showPosition(location) {
     axios.get(apiUrl).then(getCurrent);
 
 }
+//what happens when geolocation button is clicked
 
 function geoLocation(event) {
     navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-function convert(event) {
+//unit conversion
 
+function convert(event) {
     let fer = document.querySelector("#today-temp");
     fer.innerHTML = `<b>${Math.round(celTemp * 9 / 5 + 32)}℉`;
     let apiKey = "e2a35def79247fa91a2b82c7838e47a9";
