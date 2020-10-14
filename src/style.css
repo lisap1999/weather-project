@@ -31,10 +31,16 @@ body {
     margin-left: 5px;
 }
 
-a#linkedin {
+a#github {
     color: black;
     text-decoration: none;
     margin-bottom: 5px;
+}
+
+.fa-linkedin {
+    font-size: 18px;
+    position: relative;
+    top: 2px;
 }
 
 #place {
