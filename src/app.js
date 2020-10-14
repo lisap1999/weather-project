@@ -100,28 +100,28 @@ let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let now = new Date();
 let today = document.querySelector("#today-card");
 today.innerHTML = `${days[now.getDay()]} ${now.getHours()}:${now.getMinutes()}`;
-if ((now.getDay() + 1) === 7) {
+if ((now.getDay() + 1) >= 7) {
     let forth = document.querySelector("#first-day");
     forth.innerHTML = days[now.getDay() + 1 - 7];
 } else {
     let first = document.querySelector("#first-day");
     first.innerHTML = days[now.getDay() + 1];
 }
-if ((now.getDay() + 2) === 7) {
+if ((now.getDay() + 2) >= 7) {
     let forth = document.querySelector("#second-day");
     forth.innerHTML = days[now.getDay() + 2 - 7];
 } else {
     let second = document.querySelector("#second-day");
     second.innerHTML = days[now.getDay() + 2];
 }
-if ((now.getDay() + 3) === 7) {
+if ((now.getDay() + 3) >= 7) {
     let forth = document.querySelector("#third-day");
     forth.innerHTML = days[now.getDay() + 3 - 7];
 } else {
     let third = document.querySelector("#third-day");
     third.innerHTML = days[now.getDay() + 3];
 }
-if ((now.getDay() + 4) === 7) {
+if ((now.getDay() + 4) >= 7) {
     let forth = document.querySelector("#forth-day");
     forth.innerHTML = days[now.getDay() + 4 - 7];
 } else {
