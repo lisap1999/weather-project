@@ -90,19 +90,13 @@ h5 {
     margin: 0 auto;
 }
 
-.fa-tree {
-    color: rgba(5, 105, 105, 0.795);
-    opacity: 0.6;
-    font-size: 40px;
+img {
+    width: 40px;
 }
 
 #left {
-    width: 70px;
-    size: 50px;
-}
-
-img {
     width: 50px;
+    size: 50px;
 }
 
 #search-button {

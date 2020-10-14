@@ -1,5 +1,6 @@
 let celTemp = null;
 let locationName = null;
+let windSpeed = null;
 
 //shows forecast for the next 4 days
 
@@ -34,7 +35,7 @@ function forecast(response) {
 //shows the current temperature+changes the heading of today's main card
 
 function getCurrent(response) {
-
+    console.log(response);
     let currentTemp = document.querySelector("#today-temp");
     currentTemp.innerHTML = `<b>${Math.round(response.data.main.temp)}℃`;
     celTemp = Math.round(response.data.main.temp);
@@ -43,8 +44,11 @@ function getCurrent(response) {
     let heading = document.querySelector("#place");
     heading.innerHTML = response.data.name;
     locationName = response.data.name;
-    let humid = document.querySelector("#second-data");
+    let humid = document.querySelector("#humid");
     humid.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+    let speed = document.querySelector("#wind");
+    speed.innerHTML = `Wind speed: ${response.data.wind.speed} km/h`;
+    windSpeed = response.data.wind.speed;
     let todayIcon = document.querySelector("img");
     let iconUrl = (`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     todayIcon.setAttribute("src", iconUrl);
@@ -83,6 +87,8 @@ function geoLocation(event) {
 function convert(event) {
     let fer = document.querySelector("#today-temp");
     fer.innerHTML = `<b>${Math.round(celTemp * 9 / 5 + 32)}℉`;
+    let wind = document.querySelector("#wind");
+    wind.innerHTML = `wind speed: ${windSpeed*0.6} mph`;
     let apiKey = "e2a35def79247fa91a2b82c7838e47a9";
     forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${locationName}&units=imperial&appid=${apiKey}`;
     axios.get(forecastUrl).then(forecast);
