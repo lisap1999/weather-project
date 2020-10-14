@@ -12,6 +12,13 @@ body {
     margin: 7px auto;
 }
 
+.btn {
+    position: relative;
+    top: -1.5px;
+    display: inline;
+    left: 0;
+}
+
 #fer,
 #cel {
     padding: 3px 5px 3px 3px;
@@ -60,13 +67,6 @@ input {
 
 h5 {
     text-transform: uppercase;
-}
-
-.btn {
-    position: relative;
-    top: -1.5px;
-    display: inline;
-    left: 3px;
 }
 
 .card {
