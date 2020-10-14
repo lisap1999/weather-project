@@ -122,6 +122,7 @@ p {
 
 #next {
     font-size: 20px;
-    margin: 0 auto 10px 20px;
+    margin: 0 auto 20px 20px;
     text-align: center;
+    line-height: 5px;
 }
