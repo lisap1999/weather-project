@@ -1,25 +1,25 @@
 function forecast(response) {
     let firstTemp = document.querySelector("#first-temp");
-    firstTemp.innerHTML = `${Math.round(response.data.list[0].main.temp_min)}° / ${Math.round(response.data.list[0].main.temp_max)}°`;
+    firstTemp.innerHTML = `${Math.round(response.data.list[0].main.temp_min)}° / <b>${Math.round(response.data.list[0].main.temp_max)}°`;
     let firstIcon = document.querySelector("#first-icon");
     let iconUrlF = (`https://openweathermap.org/img/wn/${response.data.list[0].weather[0].icon}@2x.png`);
     firstIcon.setAttribute("src", iconUrlF);
 
     let secondTemp = document.querySelector("#second-temp");
-    secondTemp.innerHTML = `${Math.round(response.data.list[1].main.temp_min)}° / ${Math.round(response.data.list[1].main.temp_max)}°`;
+    secondTemp.innerHTML = `${Math.round(response.data.list[1].main.temp_min)}° / <b>${Math.round(response.data.list[1].main.temp_max)}°`;
     let secondIcon = document.querySelector("#second-icon");
     let iconUrlS = (`https://openweathermap.org/img/wn/${response.data.list[1].weather[0].icon}@2x.png`);
     secondIcon.setAttribute("src", iconUrlS);
 
     let thirdTemp = document.querySelector("#third-temp");
-    thirdTemp.innerHTML = `${Math.round(response.data.list[2].main.temp_min)}° / ${Math.round(response.data.list[2].main.temp_max)}°`;
+    thirdTemp.innerHTML = `${Math.round(response.data.list[2].main.temp_min)}° / <b>${Math.round(response.data.list[2].main.temp_max)}°`;
 
     let thirdIcon = document.querySelector("#third-icon");
     let iconUrlT = (`https://openweathermap.org/img/wn/${response.data.list[2].weather[0].icon}@2x.png`);
     thirdIcon.setAttribute("src", iconUrlT);
 
     let forthTemp = document.querySelector("#forth-temp");
-    forthTemp.innerHTML = `${Math.round(response.data.list[3].main.temp_min)}° / ${Math.round(response.data.list[3].main.temp_max)}°`;
+    forthTemp.innerHTML = `${Math.round(response.data.list[3].main.temp_min)}° /<b> ${Math.round(response.data.list[3].main.temp_max)}°`;
 
     let forthIcon = document.querySelector("#forth-icon");
     let iconUrlR = (`https://openweathermap.org/img/wn/${response.data.list[3].weather[0].icon}@2x.png`);
@@ -29,7 +29,7 @@ function forecast(response) {
 function getCurrent(response) {
 
     let currentTemp = document.querySelector("#today-temp");
-    currentTemp.innerHTML = `${Math.round(response.data.main.temp)}℃`;
+    currentTemp.innerHTML = `<b>${Math.round(response.data.main.temp)}℃`;
     celTemp = Math.round(response.data.main.temp);
     let description = document.querySelector("#current-des");
     description.innerHTML = `${response.data.weather[0].description}`;
@@ -87,7 +87,10 @@ let now = new Date();
 let today = document.querySelector("#today-card");
 today.innerHTML = `${days[now.getDay()]} ${now.getHours()}:${now.getMinutes()}`;
 let first = document.querySelector("#first-day");
-first.innerHTML = `${now.getDate() + 1}/${now.getMonth()}`;
+if (now.getDate() + 1 > 31) {
+    first.innerHTML = `${now.getDate()-31}/${now.getMonth()}`;
+}
+first.innerHTML = `${now.getDate()+1}/${now.getMonth()}`;
 let second = document.querySelector("#second-day");
 second.innerHTML = `${now.getDate() + 2}/${now.getMonth()}`;
 let third = document.querySelector("#third-day");
