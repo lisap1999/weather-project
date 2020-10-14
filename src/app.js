@@ -1,4 +1,5 @@
 function forecast(response) {
+    console.log(response);
     let firstTemp = document.querySelector("#first-temp");
     firstTemp.innerHTML = `${Math.round(response.data.list[0].main.temp_min)}° / <b>${Math.round(response.data.list[0].main.temp_max)}°`;
     let firstIcon = document.querySelector("#first-icon");
@@ -33,7 +34,6 @@ function getCurrent(response) {
     celTemp = Math.round(response.data.main.temp);
     let description = document.querySelector("#current-des");
     description.innerHTML = `${response.data.weather[0].description}`;
-    console.log(response);
     let heading = document.querySelector("#place");
     heading.innerHTML = response.data.name;
     let humid = document.querySelector("#second-data");
@@ -86,17 +86,35 @@ let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let now = new Date();
 let today = document.querySelector("#today-card");
 today.innerHTML = `${days[now.getDay()]} ${now.getHours()}:${now.getMinutes()}`;
-let first = document.querySelector("#first-day");
-if (now.getDate() + 1 > 31) {
-    first.innerHTML = `${now.getDate()-31}/${now.getMonth()}`;
+if ((now.getDay() + 1) === 7) {
+    let forth = document.querySelector("#first-day");
+    forth.innerHTML = days[now.getDay() + 1 - 7];
+} else {
+    let first = document.querySelector("#first-day");
+    first.innerHTML = days[now.getDay() + 1];
 }
-first.innerHTML = `${now.getDate()+1}/${now.getMonth()}`;
-let second = document.querySelector("#second-day");
-second.innerHTML = `${now.getDate() + 2}/${now.getMonth()}`;
-let third = document.querySelector("#third-day");
-third.innerHTML = `${now.getDate() + 3}/${now.getMonth()}`;
-let forth = document.querySelector("#forth-day");
-forth.innerHTML = `${now.getDate() + 4}/${now.getMonth()}`;
+if ((now.getDay() + 2) === 7) {
+    let forth = document.querySelector("#second-day");
+    forth.innerHTML = days[now.getDay() + 2 - 7];
+} else {
+    let second = document.querySelector("#second-day");
+    second.innerHTML = days[now.getDay() + 2];
+}
+if ((now.getDay() + 3) === 7) {
+    let forth = document.querySelector("#third-day");
+    forth.innerHTML = days[now.getDay() + 3 - 7];
+} else {
+    let third = document.querySelector("#third-day");
+    third.innerHTML = days[now.getDay() + 3];
+}
+if ((now.getDay() + 4) === 7) {
+    let forth = document.querySelector("#forth-day");
+    forth.innerHTML = days[now.getDay() + 4 - 7];
+} else {
+    let forth = document.querySelector("#forth-day");
+    forth.innerHTML = days[now.getDay() + 4];
+}
+
 let geo = document.querySelector("#geo-location");
 geo.addEventListener("click", geoLocation);
 
