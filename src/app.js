@@ -1,5 +1,8 @@
+let celTemp = null;
+let locationName = null;
+
+
 function forecast(response) {
-    console.log(response);
     let firstTemp = document.querySelector("#first-temp");
     firstTemp.innerHTML = `${Math.round(response.data.list[0].main.temp_min)}° / <b>${Math.round(response.data.list[0].main.temp_max)}°`;
     let firstIcon = document.querySelector("#first-icon");
@@ -36,6 +39,7 @@ function getCurrent(response) {
     description.innerHTML = `${response.data.weather[0].description}`;
     let heading = document.querySelector("#place");
     heading.innerHTML = response.data.name;
+    locationName = response.data.name;
     let humid = document.querySelector("#second-data");
     humid.innerHTML = `Humidity: ${response.data.main.humidity}%`;
     let todayIcon = document.querySelector("img");
@@ -44,7 +48,6 @@ function getCurrent(response) {
     let apiKey = "e2a35def79247fa91a2b82c7838e47a9";
     let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${response.data.name}&units=metric&appid=${apiKey}`;
     axios.get(forecastUrl).then(forecast);
-
 }
 
 function place(event) {
@@ -59,25 +62,22 @@ function place(event) {
 
 function showPosition(location) {
     let apiKey = "e2a35def79247fa91a2b82c7838e47a9";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${location.coords.latitude}&lon=${location.coords.longitude}&units=metric&appid=${apiKey}`;
+    apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${location.coords.latitude}&lon=${location.coords.longitude}&units=metric&appid=${apiKey}`;
     axios.get(apiUrl).then(getCurrent);
 
 }
 
 function geoLocation(event) {
     navigator.geolocation.getCurrentPosition(showPosition);
-
 }
-
-let celTemp = null;
-
-
 
 function convert(event) {
 
     let fer = document.querySelector("#today-temp");
-    fer.innerHTML = `${Math.round(celTemp * 9 / 5 + 32)}℉`;
-
+    fer.innerHTML = `<b>${Math.round(celTemp * 9 / 5 + 32)}℉`;
+    let apiKey = "e2a35def79247fa91a2b82c7838e47a9";
+    forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${locationName}&units=imperial&appid=${apiKey}`;
+    axios.get(forecastUrl).then(forecast);
 }
 
 let form = document.querySelector("#search-form");
@@ -120,3 +120,6 @@ geo.addEventListener("click", geoLocation);
 
 let ferButton = document.querySelector("#fer");
 ferButton.addEventListener("click", convert);
+
+let celbutton = document.querySelector("#cel");
+celbutton.addEventListener("click", place);
