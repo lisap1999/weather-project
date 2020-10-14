@@ -88,7 +88,7 @@ function convert(event) {
     let fer = document.querySelector("#today-temp");
     fer.innerHTML = `<b>${Math.round(celTemp * 9 / 5 + 32)}℉`;
     let wind = document.querySelector("#wind");
-    wind.innerHTML = `wind speed: ${windSpeed*0.6} mph`;
+    wind.innerHTML = `wind speed: ${Math.round(windSpeed*0.6)} mph`;
     let apiKey = "e2a35def79247fa91a2b82c7838e47a9";
     forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${locationName}&units=imperial&appid=${apiKey}`;
     axios.get(forecastUrl).then(forecast);
