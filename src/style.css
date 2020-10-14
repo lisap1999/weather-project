@@ -102,7 +102,10 @@ img {
 
 #left {
     width: 50px;
-    size: 50px;
+}
+
+#wind-icon {
+    width: 25px;
 }
 
 #search-button {
