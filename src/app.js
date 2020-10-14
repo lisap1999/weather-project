@@ -87,13 +87,13 @@ let now = new Date();
 let today = document.querySelector("#today-card");
 today.innerHTML = `${days[now.getDay()]} ${now.getHours()}:${now.getMinutes()}`;
 let first = document.querySelector("#first-day");
-first.innerHTML = days[now.getDay() + 1];
+first.innerHTML = `${now.getDate() + 1}/${now.getMonth()}`;
 let second = document.querySelector("#second-day");
-second.innerHTML = days[now.getDay() + 2];
+second.innerHTML = `${now.getDate() + 2}/${now.getMonth()}`;
 let third = document.querySelector("#third-day");
-third.innerHTML = days[now.getDay() + 3];
+third.innerHTML = `${now.getDate() + 3}/${now.getMonth()}`;
 let forth = document.querySelector("#forth-day");
-forth.innerHTML = days[now.getDay() + 4];
+forth.innerHTML = `${now.getDate() + 4}/${now.getMonth()}`;
 let geo = document.querySelector("#geo-location");
 geo.addEventListener("click", geoLocation);
 
