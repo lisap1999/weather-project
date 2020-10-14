@@ -47,7 +47,7 @@ function getCurrent(response) {
     let humid = document.querySelector("#humid");
     humid.innerHTML = `Humidity: ${response.data.main.humidity}%`;
     let speed = document.querySelector("#wind");
-    speed.innerHTML = `Wind speed: ${response.data.wind.speed} km/h`;
+    speed.innerHTML = `Wind speed: ${Math.round(response.data.wind.speed)} km/h`;
     windSpeed = response.data.wind.speed;
     let todayIcon = document.querySelector("img");
     let iconUrl = (`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
