@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    background-image: linear-gradient(120deg, #9ff8c0 0%, #8fd3f4 100%);
     opacity: 0.9;
     border: 1px solid rgba(0, 0, 0, 0.253);
     border-radius: 30px;
@@ -15,9 +15,9 @@ body {
 #fer,
 #cel {
     padding: 3px 5px 3px 3px;
-    display: inline;
     position: relative;
     right: 0;
+    margin-left: 0;
 }
 
 #fer:hover,
